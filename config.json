@@ -1,0 +1,9 @@
+{
+  "rig01": {
+    "algo": "rx/0",
+    "pool": "randomxmonero.auto.nicehash.com:9200",
+    "wallet": "YOUR_WALLET_ADDRESS",
+    "worker": "rig01",
+    "threads": 1
+  }
+}
