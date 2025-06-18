@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CPU Miner Dashboard</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    h2 { margin-top: 40px; }
+    input { width: 300px; padding: 5px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>💻 CPU Miner Dashboard</h1>
+  {% for worker, cfg in configs.items() %}
+    <h2>🖥️ {{ worker }}</h2>
+    <form action="/update/{{ worker }}" method="POST">
+      <label>Algorithm:</label><br>
+      <input name="algo" value="{{ cfg.algo }}"><br>
+      <label>Pool:</label><br>
+      <input name="pool" value="{{ cfg.pool }}"><br>
+      <label>Wallet:</label><br>
+      <input name="wallet" value="{{ cfg.wallet }}"><br>
+      <label>Threads:</label><br>
+      <input name="threads" type="number" value="{{ cfg.threads }}"><br>
+      <button type="submit">💾 Save</button>
+    </form>
+    <hr>
+  {% endfor %}
+</body>
+</html>
